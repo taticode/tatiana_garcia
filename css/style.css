@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --sygris-purple: #6200EE;
+        --sygris-bg: #F8F9FA;
+        --sygris-dark: #1A1C1E;
+    }
+}
