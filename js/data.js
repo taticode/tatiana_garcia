@@ -23,7 +23,7 @@ const appData = {
         {
             id: "private", name: "Private", icon: "fa-solid fa-lock", isOpen: true,
             subfolders: [
-                { id: "sub-env", name: "Environment", count: 2, active: true },
+                { id: "sub-env", name: "Environment", count: 2, active: false },
                 { id: "sub-rrhh", name: "RRHH", count: 3, active: false }
             ]
         },

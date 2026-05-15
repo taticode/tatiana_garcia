@@ -5,6 +5,7 @@
     --color-sygris-primary-grey: #182C3F;
     --color-sygris-primary-grey-light: #293D53;
     --color-sygris-primary-purple-light: #7D5DEE;
+    --color-sygris-grey-secondary: #5E5E5E;
     --color-sygris-grey-tertiary: #929292;
     --color-sygris-neutral-dark-2: #C8D9E0;
     --color-sygris-neutral-neutral: #EFF4F6;
@@ -60,3 +61,7 @@
 
 .custom-scroll::-webkit-scrollbar { width: 5px; }
 .custom-scroll::-webkit-scrollbar-thumb { background: var(--color-sygris-neutral-dark-2); border-radius: 10px; }
+
+.fa-thumbtack {
+   padding-top: 2px;
+}

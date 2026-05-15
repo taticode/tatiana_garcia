@@ -10,7 +10,7 @@
 </head>
 <body class="bg-sygris-neutral-light overflow-hidden h-screen flex flex-col">
 
-    <header class="fixed top-0 left-0 z-50 w-full h-14 bg-sygris-primary-purple flex items-center justify-between px-6">
+    <header class="fixed top-0 left-0 z-30 w-full h-14 bg-sygris-primary-purple flex items-center justify-between px-6">
         <a href="#"><img src="./assets/branding/logo-sygris.svg" class="h-6" alt="Sygris Logo" /></a>
         <nav id="nav-items-container" class="flex items-center space-x-4"></nav>
     </header>
@@ -21,12 +21,12 @@
     </aside>
 
     <main class="mt-14 ml-16 flex-1 flex flex-col overflow-hidden">
-        <section class="p-8 bg-white border-b border-sygris-neutral-dark-2 shrink-0">
+        <section class="p-8 bg-sygris-neutral-light border-b border-sygris-neutral-dark-2 shrink-0">
             <h1 class="text-2xl font-bold text-sygris-primary-grey mb-6">Dashboards</h1>
             <div class="flex items-center gap-6">
                 <div class="relative w-full max-w-sm">
-                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-sygris-grey-tertiary"></i>
-                    <input type="text" class="w-full pl-10 pr-4 py-2 bg-sygris-neutral-neutral border-none rounded-lg text-sm" placeholder="Search dashboard...">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-sygris-grey-secondary"></i>
+                    <input type="text" class="searchinput w-full pl-10 pr-4 py-2 bg-sygris-neutral-neutral border-none rounded-lg text-sm" placeholder="Search dashboard...">
                 </div>
                 <label class="flex items-center gap-2 text-sm text-sygris-primary-grey cursor-pointer font-medium">
                     <input type="checkbox" class="rounded border-sygris-neutral-dark-2 text-sygris-primary-purple">
@@ -36,22 +36,22 @@
         </section>
 
         <div class="flex-1 flex overflow-hidden">
-            <aside class="w-80 bg-white border-r border-sygris-neutral-dark-2 p-6 flex flex-col overflow-hidden">
-                <span class="text-[10px] text-sygris-grey-tertiary tracking-widest mb-4 block uppercase font-bold">Folders</span>
+            <aside class="w-80 bg-sygris-neutral-light border-r border-sygris-neutral-dark-2 p-6 flex flex-col overflow-hidden">
+                <span class="text-base text-sygris-grey-secondary tracking-widest mb-4 block">Folders</span>
                 <div id="folders-accordion-container" class="flex-1 overflow-y-auto custom-scroll pr-2" data-accordion="collapse"></div>
             </aside>
 
             <section class="flex-1 flex flex-col overflow-hidden">
                 <div class="p-8 pb-4 flex justify-between items-center shrink-0">
-                    <div class="flex items-center gap-2 text-sygris-primary-grey">
-                        <i class="fa-solid fa-lock text-sm"></i>
-                        <h2 class="text-xl font-bold">Environment</h2>
+                    <div class="flex items-center gap-2 text-sygris-grey-secondary">
+                        <i class="fa-solid fa-lock text-lg"></i>
+                        <h2 class="text-base">Environment</h2>
                     </div>
                     <div class="flex items-center gap-4">
                         <button class="flex items-center gap-4 px-4 py-2 bg-white border border-sygris-neutral-dark-2 rounded-lg text-sm text-sygris-primary-grey">
                             Order by creation <i class="fa-solid fa-chevron-down text-sygris-primary-purple text-[10px]"></i>
                         </button>
-                        <button data-modal-target="new-dashboard-modal" data-modal-toggle="new-dashboard-modal" class="bg-sygris-primary-purple text-white px-6 py-2.5 rounded-lg text-sm font-bold flex items-center gap-2 hover:brightness-110 transition-all shadow-sm">
+                        <button data-modal-target="new-dashboard-modal" data-modal-toggle="new-dashboard-modal" class="bg-sygris-primary-purple text-white px-6 py-2.5 rounded-lg text-sm flex items-center gap-2 hover:brightness-110 transition-all shadow-sm">
                             <i class="fa-solid fa-plus"></i> New dashboard
                         </button>
                     </div>
@@ -68,12 +68,12 @@
                 <button data-modal-hide="new-dashboard-modal"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <div class="p-8">
-                <label class="block mb-2 text-sm font-bold">Title</label>
+                <label class="block mb-2 text-sm font-bold text-sygris-grey-secondary">Title</label>
                 <input type="text" class="w-full p-3 border border-sygris-neutral-dark-2 rounded-lg italic" placeholder="Write here...">
             </div>
             <div class="p-6 border-t border-sygris-neutral-dark-2 flex justify-end gap-4">
-                <button data-modal-hide="new-dashboard-modal" class="text-sygris-primary-purple font-bold">Cancel</button>
-                <button class="bg-sygris-primary-purple text-white px-8 py-2 rounded-lg font-bold">Create</button>
+                <button data-modal-hide="new-dashboard-modal" class="px-8 py-2 text-base text-sygris-primary-purple">Cancel</button>
+                <button class="bg-sygris-primary-purple text-white px-8 py-2 text-base rounded-lg ">Create</button>
             </div>
         </div>
     </div>
