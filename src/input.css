@@ -16,16 +16,43 @@
     --color-sygris-status-red-dark: #D6240C;
 }
 
-/* Fix: Botones y fondos que deben ser sólidos */
+[multiple],
+[type=date],
+[type=datetime-local],
+[type=email],
+[type=month],
+[type=number],
+[type=password],
+[type=search],
+[type=tel], [type=text],
+[type=time],
+[type=url],
+[type=week],
+select, textarea  {
+    border-color: var(--color-sygris-neutral-dark-2);
+}
+
+.sidenav-container {
+    [role=tooltip]{
+        transform: translate3d( 42px,-32px,0px ) !important;
+    }
+    .tooltip-arrow {
+        transform: translateX( 90%) !important;
+    }
+}
+
 .bg-sygris-primary-purple {
     background-color: var(--color-sygris-primary-purple) !important;
 }
 
 .sidenav-container {
     background-color: var(--color-sygris-primary-grey);
-    width: 64px; height: calc(100vh - 56px);
+    height: calc(100vh - 48px);
     display: flex; flex-direction: column; justify-content: space-between;
-    padding: 24px 0; position: fixed; top: 56px; left: 0; z-index: 40;
+    position: fixed; 
+    top: 48px; 
+    left: 0; 
+    z-index: 40;
 }
 
 .sidenav-link {

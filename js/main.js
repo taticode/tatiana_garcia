@@ -4,7 +4,7 @@ const Icon = (cls, extra = "") => `<i class="${cls} ${extra}"></i>`;
 // --- COMPONENTES DE ESTRUCTURA ---
 const NavIconItem = (i) => `
     <div class="relative flex items-center px-1">
-        ${Icon(i.name, "text-white text-xl cursor-pointer")}
+        ${Icon(i.name, "text-white text-2xl cursor-pointer")}
         ${i.notification ? `<span class="absolute top-3 -right-2.5 bg-sygris-status-red-dark text-[9px] text-white font-bold px-1 py-0.5 rounded-lg">${appData.navData.notifNumber}</span>` : ''}
     </div>`;
 
@@ -42,13 +42,13 @@ const SubfolderItem = (sub) => {
 const renderNavbar = () => {
     const nav = appData.navData;
     let html = `
-        <button class="flex items-center text-white gap-1 hover:opacity-80 transition cursor-pointer">
-            <span class="text-[11px] font-bold uppercase">${nav.language}</span>
-            ${Icon("fa-solid fa-chevron-down", "text-[8px]")}
+        <button class="flex items-center text-white gap-2 hover:opacity-80 transition cursor-pointer">
+            <span class="text-sm font-bold uppercase">${nav.language}</span>
+            ${Icon("fa-solid fa-chevron-down", "text-sm")}
         </button>
         <div class="h-4 w-px bg-white/20 mx-1"></div>
         ${nav.icons.map(NavIconItem).join('')}
-        <div class="w-8 h-8 rounded-full bg-sygris-status-green-dark border border-white flex items-center justify-center ml-2">
+        <div class="w-6 h-6 rounded-full bg-sygris-status-green-dark border border-white flex items-center justify-center ml-2">
             <span class="text-white text-[10px] font-bold">${nav.userInitials}</span>
         </div>`;
     document.getElementById('nav-items-container').innerHTML = html;
@@ -57,8 +57,8 @@ const renderNavbar = () => {
 const renderSidenav = () => {
     const mapItems = (arr) => arr.map(item => `
         <div class="relative flex items-center mb-5 last:mb-0">
-            <button data-tooltip-target="tt-${item.id}" class="sidenav-link ${item.active ? 'active' : ''}">
-                ${item.isText ? `<span class="text-[10px] font-bold">${item.label}</span>` : Icon(item.icon, "text-lg")}
+            <button data-tooltip-target="tt-${item.id}" class="sidenav-link text-base ${item.active ? 'active' : ''}">
+                ${item.isText ? `<span class=" font-bold">${item.label}</span>` : Icon(item.icon)}
             </button>
             <div id="tt-${item.id}" role="tooltip" class="absolute z-50 invisible inline-block px-3 py-2 text-xs font-medium text-white bg-sygris-primary-grey rounded-lg shadow-sm opacity-0 tooltip">
                 ${item.tooltip} <div class="tooltip-arrow" data-popper-arrow></div>
@@ -73,11 +73,11 @@ const renderFolders = () => {
     document.getElementById('folders-accordion-container').innerHTML = appData.folders.map(f => `
         <div class="mb-2 border-b border-">
             <h2 id="heading-${f.id}">
-                <button type="button" class="flex items-center justify-between w-full p-2 text-sygris-primary-grey hover:bg-sygris-neutral-neutral rounded-lg" data-accordion-target="#body-${f.id}" aria-expanded="${f.isOpen}">
+                <button type="button" class="flex items-center justify-between w-full p-2 text-sygris-grey-tertiary hover:bg-sygris-neutral-neutral rounded-lg" data-accordion-target="#body-${f.id}" aria-expanded="${f.isOpen}">
                     <div class="flex items-center gap-3">
                         ${Icon("fa-solid fa-chevron-up", "text-[10px] text-sygris-primary-purple transition-transform duration-300 accordion-chevron")}
-                        ${Icon(f.icon, "text-xs text-sygris-grey-secondary")}
-                        <span class="text-sm font-medium">${f.name}</span>
+                        ${Icon(f.icon, "text-xs text-sygris-grey-tertiary")}
+                        <span class="text-sm font-medium text-sygris-grey-tertiary">${f.name}</span>
                     </div>
                 </button>
             </h2>
@@ -91,18 +91,18 @@ const renderFolders = () => {
 
 const renderDashboards = () => {
     const container = document.getElementById('cards-grid-container');
-    container.className = "grid grid-cols-1 lg:grid-cols-3 gap-6 overflow-y-auto px-8 pb-8 custom-scroll flex-1";
+    container.className = "grid grid-cols-1 lg:grid-cols-3 gap-4 items-start content-start overflow-y-auto pl-4 pr-6 pb-8 custom-scroll flex-1";
     
     container.innerHTML = appData.dashboards.map(dash => `
-        <article class="dashboard-card group bg-white border border-sygris-neutral-dark-2 rounded-xl p-6 transition-all hover:shadow-lg">
-            <div class="flex justify-between items-start mb-8">
-                ${Icon(dash.isLocked ? 'fa fa-lock' : 'fa fa-lock-open', "text-sygris-neutral-dark-2")}
+        <article class="dashboard-card group bg-white border border-sygris-neutral-dark-2 rounded-md pt-3 pb-7 px-4 transition-all hover:shadow-lg">
+            <div class="flex justify-between items-start mb-3">
+                ${Icon(dash.isLocked ? 'fa fa-lock' : 'fa fa-lock-open', "text-sygris-grey-tertiary bg-sygris-neutral-neutral text-xs py-1.5 px-2 rounded-md")}
                 <div class="flex gap-2">
                     ${Icon("fa-solid fa-thumbtack", dash.isPinned ? 'text-sygris-status-red-dark' : 'text-sygris-neutral-dark-2 opacity-40')}
                     ${Icon("fa-solid fa-star", dash.isFavorite ? 'text-sygris-status-yellow' : 'text-sygris-neutral-dark-2 opacity-40')}
                 </div>
             </div>
-            <h3 class="text-sygris-primary-purple font-bold text-base mb-1 group-hover:underline">${dash.title}</h3>
+            <h3 class="text-sygris-primary-purple font-bold text-base mb-1">${dash.title}</h3>
             <p class="text-[11px] text-sygris-grey-secondary font-medium">${dash.author}, ${dash.date}</p>
         </article>`).join('');
 };
