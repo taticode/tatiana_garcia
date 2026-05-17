@@ -94,17 +94,17 @@ const renderDashboards = () => {
     container.className = "grid grid-cols-1 lg:grid-cols-3 gap-4 items-start content-start overflow-y-auto pl-4 pr-6 pb-8 custom-scroll flex-1";
     
     container.innerHTML = appData.dashboards.map(dash => `
-        <article class="dashboard-card group bg-white border border-sygris-neutral-dark-2 rounded-md pt-3 pb-7 px-4 transition-all hover:shadow-lg">
-            <div class="flex justify-between items-start mb-3">
-                ${Icon(dash.isLocked ? 'fa fa-lock' : 'fa fa-lock-open', "text-sygris-grey-tertiary bg-sygris-neutral-neutral text-xs py-1.5 px-2 rounded-md")}
-                <div class="flex gap-2">
-                    ${Icon("fa-solid fa-thumbtack", dash.isPinned ? 'text-sygris-status-red-dark' : 'text-sygris-neutral-dark-2 opacity-40')}
-                    ${Icon("fa-solid fa-star", dash.isFavorite ? 'text-sygris-status-yellow' : 'text-sygris-neutral-dark-2 opacity-40')}
-                </div>
+   <article class="dashboard-card group bg-white border border-sygris-neutral-dark-2 rounded-xl p-6 transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1 hover:bg-sygris-neutral-neutral cursor-pointer relative z-10 hover:z-20">
+        <div class="flex justify-between items-start mb-8">
+            ${Icon(dash.isLocked ? 'fa fa-lock' : 'fa fa-lock-open', "text-sygris-neutral-dark-2")}
+            <div class="flex gap-2">
+                ${Icon("fa-solid fa-thumbtack", dash.isPinned ? 'text-sygris-status-red-dark' : 'text-sygris-neutral-dark-2 opacity-40')}
+                ${Icon("fa-solid fa-star", dash.isFavorite ? 'text-sygris-status-yellow' : 'text-sygris-neutral-dark-2 opacity-40')}
             </div>
-            <h3 class="text-sygris-primary-purple font-bold text-base mb-1">${dash.title}</h3>
-            <p class="text-[11px] text-sygris-grey-secondary font-medium">${dash.author}, ${dash.date}</p>
-        </article>`).join('');
+        </div>
+        <h3 class="text-sygris-primary-purple font-medium text-sm mb-1">${dash.title}</h3>
+        <p class="text-[11px] text-sygris-grey-tertiary font-medium">${dash.author}, ${dash.date}</p>
+    </article>`).join('');
 };
 
 document.addEventListener('DOMContentLoaded', () => {
