@@ -9,8 +9,8 @@
     --color-sygris-grey-tertiary: #929292;
     --color-sygris-neutral-dark-2: #C8D9E0;
     --color-sygris-neutral-neutral: #EFF4F6;
-    --color-sygris-white: #FFFFFF;
     --color-sygris-neutral-light: #F8FAFC;
+    --color-sygris-white: #FFFFFF;
     --color-sygris-status-yellow: #E8C000;
     --color-sygris-status-green-dark: #20BC9E;
     --color-sygris-status-red-dark: #D6240C;
@@ -30,6 +30,9 @@
 [type=week],
 select, textarea  {
     border-color: var(--color-sygris-neutral-dark-2);
+    ::placeholder {
+        color: var(--color-sygris-primary-grey-light);
+    }
 }
 
 .sidenav-container {
@@ -91,4 +94,14 @@ select, textarea  {
 
 .fa-thumbtack {
    padding-top: 2px;
+}
+
+#new-dashboard-modal.hidden {
+    display: none !important;
+    pointer-events: none !important;
+}
+
+.dashboard-card {
+    position: relative;
+    isolation: isolate; 
 }

@@ -61,19 +61,19 @@
         </div>
     </main>
 
-    <div id="new-dashboard-modal" tabindex="-1" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+  <div id="new-dashboard-modal" tabindex="-1" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none [&.id]:pointer-events-auto">
         <div class="bg-white rounded-xl shadow-2xl w-full max-w-2xl overflow-hidden">
-            <div class="p-6 border-b border-sygris-neutral-dark-2 flex justify-between items-center">
-                <h3 class="text-xl font-bold">New dashboard</h3>
+            <div class="px-6 py-4 font-medium border-b border-sygris-neutral-dark-2 flex justify-between items-center">
+                <h3 class="text-xl ">New dashboard</h3>
                 <button data-modal-hide="new-dashboard-modal"><i class="fa-solid fa-xmark"></i></button>
             </div>
-            <div class="p-8">
+            <div class="px-6 py-4">
                 <label class="block mb-2 text-sm font-bold text-sygris-grey-secondary">Title</label>
                 <input type="text" class="w-full p-3 border border-sygris-neutral-dark-2 rounded-lg italic" placeholder="Write here...">
             </div>
-            <div class="p-6 border-t border-sygris-neutral-dark-2 flex justify-end gap-4">
-                <button data-modal-hide="new-dashboard-modal" class="px-8 py-2 text-base text-sygris-primary-purple">Cancel</button>
-                <button class="bg-sygris-primary-purple text-white px-8 py-2 text-base rounded-lg ">Create</button>
+            <div class="px-4 py-2.5 border-t border-sygris-neutral-dark-2 flex justify-end gap-4">
+                <button data-modal-hide="new-dashboard-modal" class="px-3 py-2 text-base text-sygris-primary-purple cursor-pointer hover:bg-sygris-neutral-neutral!">Cancel</button>
+                <button class="bg-sygris-primary-purple text-sygris-white! px-3 py-2 text-base rounded-lg cursor-pointer">Create</button>
             </div>
         </div>
     </div>

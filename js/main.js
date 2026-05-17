@@ -94,7 +94,8 @@ const renderDashboards = () => {
     container.className = "grid grid-cols-1 lg:grid-cols-3 gap-4 items-start content-start overflow-y-auto pl-4 pr-6 pb-8 custom-scroll flex-1";
     
     container.innerHTML = appData.dashboards.map(dash => `
-   <article class="dashboard-card group bg-white border border-sygris-neutral-dark-2 rounded-xl p-6 transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1 hover:bg-sygris-neutral-neutral cursor-pointer relative z-10 hover:z-20">
+
+   <article class="dashboard-card group bg-sygris-white border border-sygris-neutral-dark-2 rounded-xl p-6 cursor-pointer transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1 relative z-20 hover:bg-sygris-neutral-neutral">
         <div class="flex justify-between items-start mb-8">
             ${Icon(dash.isLocked ? 'fa fa-lock' : 'fa fa-lock-open', "text-sygris-neutral-dark-2")}
             <div class="flex gap-2">
