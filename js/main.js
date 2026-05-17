@@ -91,7 +91,7 @@ const renderFolders = () => {
 
 const renderDashboards = () => {
     const container = document.getElementById('cards-grid-container');
-    container.className = "grid grid-cols-1 lg:grid-cols-3 gap-4 items-start content-start overflow-y-auto pl-4 pr-6 pb-8 custom-scroll flex-1";
+    container.className = "grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4 items-start content-start overflow-y-auto  px-2 md:px-6 lg:pl-4 pb-8 custom-scroll flex-1";
     
     container.innerHTML = appData.dashboards.map(dash => `
 
@@ -107,6 +107,7 @@ const renderDashboards = () => {
         <p class="text-[11px] text-sygris-grey-tertiary font-medium">${dash.author}, ${dash.date}</p>
     </article>`).join('');
 };
+
 
 document.addEventListener('DOMContentLoaded', () => {
     renderNavbar();

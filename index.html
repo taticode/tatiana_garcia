@@ -21,37 +21,38 @@
     </aside>
 
     <main class="relative ml-16 mt-12 flex-1 flex flex-col overflow-hidden">
-        <section class="py-4 px-6 border-b border-sygris-neutral-dark-2 shrink-0">
-            <h1 class="text-2xl text-sygris-primary-grey mb-2 font-medium">Dashboards</h1>
-            <div class="flex items-center gap-6">
+        <section class="p-2 px-md:py-4 md:px-6 border-b border-sygris-neutral-dark-2 shrink-0 gap-2 grid grid-cols-1">
+            <h1 class="text-xl md:text-2xl text-sygris-primary-grey mb-2 font-medium">Dashboards</h1>
+            <div class="flex flex-col justify-start md:flex-row md:items-center gap-4 lg:gap-6">
                 <div class="relative w-full max-w-sm">
                     <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-sygris-grey-secondary"></i>
                     <input type="text" class="searchinput w-full pl-10 pr-4 py-2 bg-sygris-neutral-neutral border-none rounded-lg text-sm" placeholder="Search dashboard...">
                 </div>
                 <label class="flex items-center gap-2 text-xs text-sygris-primary-grey cursor-pointer">
-                    <input type="checkbox" class="rounded border-sygris-neutral-dark-2 text-sygris-primary-purple">
+                    <input type="checkbox" class="rounded border-sygris-neutral-dark-2 text-sygris-primary-purple ">
                     Created by me (4)
                 </label>
             </div>
         </section>
 
-        <div class="flex-1 flex overflow-hidden">
-            <aside class="w-80 bg-sygris-neutral-light border-r border-sygris-neutral-dark-2 px-2 py-4 flex flex-col overflow-hidden">
+        <div class="grid grid-cols-1 md:grid-cols-3 overflow-hidden">
+            <aside class="bg-sygris-neutral-light border-r border-sygris-neutral-dark-2 px-2 py-4 flex flex-col overflow-hidden">
                 <span class="text-base py-3 px-4 text-sygris-grey-secondary tracking-widest block">Folders</span>
                 <div id="folders-accordion-container" class="flex-1 overflow-y-auto custom-scroll pr-2" data-accordion="collapse"></div>
             </aside>
 
-            <section class="flex-1 flex flex-col overflow-hidden text-sygris-grey-secondary">
-                <div class="py-3 px-6 flex justify-between items-center shrink-0">
-                    <div class="flex items-center gap-2 text-sygris-grey-secondary">
+            <section class="xs:col-span-3 sm:col-span-2 flex-1 flex flex-col overflow-hidden text-sygris-grey-secondary">
+                <div class="py-3 px-2 md:px-6 flex justify-between flex-col lg:flex-row items-center shrink-0">
+                    <div class="w-full lg:w-auto flex items-center gap-2 text-sygris-grey-secondary">
                         <i class="fa-solid fa-lock text-lg text-sygris-grey-tertiary "></i>
                         <h2 class="text-base">Environment</h2>
                     </div>
-                    <div class="flex items-center gap-4">
+                    <div class="w-full lg:w-auto flex items-center gap-4">
                         <button class="flex items-center gap-4 px-3 py-2 bg-white border border-sygris-neutral-dark-2 rounded-lg text-xs text-sygris-primary-grey">
                             Order by creation <i class="fa-solid fa-chevron-down text-sygris-primary-purple text-[10px]"></i>
                         </button>
-                        <button data-modal-target="new-dashboard-modal" data-modal-toggle="new-dashboard-modal" class="bg-sygris-primary-purple text-white px-3 py-1.5 rounded-md text-sm flex items-center gap-2 hover:brightness-110 transition-all shadow-sm">
+                        <button data-modal-target="new-dashboard-modal" data-modal-toggle="new-dashboard-modal" 
+                        class="bg-sygris-primary-purple text-white px-3 py-1.5 rounded-md text-sm flex items-center gap-2 hover:brightness-110 transition-all shadow-sm">
                             <i class="fa-solid fa-plus"></i> New dashboard
                         </button>
                     </div>
@@ -61,19 +62,19 @@
         </div>
     </main>
 
-  <div id="new-dashboard-modal" tabindex="-1" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none [&.id]:pointer-events-auto">
-        <div class="bg-white rounded-xl shadow-2xl w-full max-w-2xl overflow-hidden">
+    <div id="new-dashboard-modal" tabindex="-1" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-2xl overflow-hidden relative">
             <div class="px-6 py-4 font-medium border-b border-sygris-neutral-dark-2 flex justify-between items-center">
-                <h3 class="text-xl ">New dashboard</h3>
-                <button data-modal-hide="new-dashboard-modal"><i class="fa-solid fa-xmark"></i></button>
+                <h3 class="text-xl font-medium">New dashboard</h3>
+                <button data-modal-hide="new-dashboard-modal" class="cursor-pointer font-medium"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <div class="px-6 py-4">
                 <label class="block mb-2 text-sm font-bold text-sygris-grey-secondary">Title</label>
                 <input type="text" class="w-full p-3 border border-sygris-neutral-dark-2 rounded-lg italic" placeholder="Write here...">
             </div>
-            <div class="px-4 py-2.5 border-t border-sygris-neutral-dark-2 flex justify-end gap-4">
-                <button data-modal-hide="new-dashboard-modal" class="px-3 py-2 text-base text-sygris-primary-purple cursor-pointer hover:bg-sygris-neutral-neutral!">Cancel</button>
-                <button class="bg-sygris-primary-purple text-sygris-white! px-3 py-2 text-base rounded-lg cursor-pointer">Create</button>
+            <div class="px-4 py-2.5 border-t border-sygris-neutral-dark-2 flex justify-end gap-4 relative">
+                <button data-modal-hide="new-dashboard-modal" class="px-3 py-2 text-base text-sygris-primary-purple! bg-white cursor-pointer hover:bg-sygris-neutral-neutral! rounded-lg font-medium transition-colors duration-150">Cancel</button>
+                <button class="bg-sygris-primary-purple text-white px-3 py-2 text-base rounded-lg cursor-pointer hover:brightness-110 transition-all">Create</button>
             </div>
         </div>
     </div>

@@ -82,7 +82,10 @@ select, textarea  {
     to { opacity: 1; transform: translateY(0); }
 }
 
-[data-modal-backdrop] { background-color: rgba(24, 44, 63, 0.7) !important; }
+[data-modal-backdrop] { 
+    background-color: rgba(24, 44, 63, 0.7) !important;
+    z-index: 30 !important;
+ }
 
 .folder-active {
     background-color: var(--color-sygris-neutral-neutral) !important;
