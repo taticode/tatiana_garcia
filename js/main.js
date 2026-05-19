@@ -53,7 +53,6 @@ const renderNavbar = () => {
         </li>`;
   
         document.querySelector('#nav-items-container ul').innerHTML = html;
-         document.querySelector('#mobile-nav ul').innerHTML = html;
 };
 
 const renderSidenav = () => {

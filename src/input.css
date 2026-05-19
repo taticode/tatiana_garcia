@@ -51,7 +51,7 @@ select, textarea  {
 .sidenav-container {
     background-color: var(--color-sygris-primary-grey);
     height: calc(100vh - 48px);
-    display: flex; flex-direction: column; justify-content: space-between;
+    flex-direction: column; justify-content: space-between;
     position: fixed; 
     top: 48px; 
     left: 0; 
