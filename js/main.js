@@ -46,12 +46,14 @@ const renderNavbar = () => {
             <span class="text-sm font-bold uppercase">${nav.language}</span>
             ${Icon("fa-solid fa-chevron-down", "text-sm")}
         </button>
-        <div class="h-4 w-px bg-white/20 mx-1"></div>
+        <li class="h-4 w-px bg-white/20 mx-1"></li>
         ${nav.icons.map(NavIconItem).join('')}
-        <div class="w-6 h-6 rounded-full bg-sygris-status-green-dark border border-white flex items-center justify-center ml-2">
+        <li class="w-6 h-6 rounded-full bg-sygris-status-green-dark border border-white flex items-center justify-center ml-2">
             <span class="text-white text-[10px] font-bold">${nav.userInitials}</span>
-        </div>`;
-    document.getElementById('nav-items-container').innerHTML = html;
+        </li>`;
+  
+        document.querySelector('#nav-items-container ul').innerHTML = html;
+         document.querySelector('#mobile-nav ul').innerHTML = html;
 };
 
 const renderSidenav = () => {

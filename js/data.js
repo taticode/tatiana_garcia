@@ -19,6 +19,7 @@ const appData = {
         userInitials: "TG",
         notifNumber: 10,
     },
+
     folders: [
         {
             id: "01", name: "Private", icon: "fa-solid fa-lock", isOpen: true,
